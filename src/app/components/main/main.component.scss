@@ -1,0 +1,193 @@
+.main{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 330px;
+    margin: 0 auto;
+    margin-top: 32px;
+
+}
+
+h1{
+    color: #07B0FB;
+    margin: 0;
+}
+
+button{
+    padding: 4px 16px;
+    background: #07B0FB;
+    border-radius: 100px;
+    color: #fff;
+    border: none;
+    height: 48px;
+    width: 330px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+}
+button:focus{
+    outline: 3px solid #69d2ff;
+
+}
+
+.rate{
+    p{
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        line-height: 28px;
+        color: #262626;
+    }
+    p.date{
+        font-weight: normal;
+        font-size: 14px;
+    }
+}
+.date_and_currency{
+    width: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .currency{
+        color: #07B0FB;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
+
+.exchangeRate{
+    width: 100%;
+    background-color: #07b2fb1b;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    h3{
+        color: #07B0FB;
+        font-weight: 700;
+        text-align: center;
+        font-size: 32px;
+        line-height: 40px;
+        opacity: 1;
+    }
+}
+div.last_days{
+    max-width: 1170px;
+    min-width: 330px;
+    display: flex;
+    flex-direction: column;
+
+}
+.toggler{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 2px solid #07B0FB;
+    padding: 16px 0;
+    h4{
+        width: fit-content;
+        padding: 0;
+        margin: 0;
+    }
+    .plus h1{
+        color: #07B0FB;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+
+div.last_list::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  div.last_list::-webkit-scrollbar-track {
+  }
+   
+  div.last_list::-webkit-scrollbar-thumb {
+    background-color: rgb(130, 130, 130);
+    border-radius: 20px;
+}
+
+div.last_list{
+    background: #F4F4F4;
+    height: fit-content;
+    width: 330px;
+    max-height: 800px;
+    overflow: scroll;
+    overflow-x: hidden;
+    .card{
+        background: #FFFFFF;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        width: 310px;
+        height: 141px;
+        margin: 10px;
+        
+        div.card-date{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            margin-left: 16px;
+            div{
+                flex: 1;
+                margin-top: 8px;
+            }
+            p{
+                width: fit-content;
+                color: #07B0FB;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+                margin: 0;
+                text-align: center;
+                white-space: nowrap;
+
+            }
+        }
+        .metrics{
+            margin: 16px;
+            display: flex;
+            justify-content: space-between;
+            p{
+                padding: 0;
+                font-size: 11px;
+                margin: 0;
+                white-space: nowrap;
+                span{
+                    margin-left: 14px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #3F3F3F; 
+                    white-space: nowrap;
+           
+                 }
+            }
+        }
+    }
+}
+
+.metric{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 9px;
+    width: 120px;
+    span{
+        white-space: nowrap;
+    }
+
+}

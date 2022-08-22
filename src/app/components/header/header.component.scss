@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    flex-direction: column;
+    max-width: 1170px;
+    min-width: 330px;
+    margin: 0 auto;
+    margin-top: 16px;
+    gap: 16px;
+
+}
+.line{
+    height: 2px;
+    background-color:#D9D9D9;
+}
+img{
+    margin: 0 auto;
+}

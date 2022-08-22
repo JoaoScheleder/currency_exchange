@@ -1,0 +1,78 @@
+<div class="main">
+    <h1>BRL EXCHANGE RATE</h1>
+    <app-input (currencyChange)="setCurrency($event)"></app-input>
+    <button (click)="handleClick()">EXCHANGE RESULT</button>
+    <div *ngIf="exchangeRate" class="rate">
+        <div class="date_and_currency">
+            <div>
+                <p >Exchange rate now</p>
+                <p class="date">{{date}}</p>
+            </div>
+            <div class="currency">
+                {{currency.toUpperCase()}}/BRL
+            </div>
+  
+        </div>
+        <div class="exchangeRate">
+            
+            <h3>
+                R$ {{exchangeRate}}
+            </h3>
+
+        </div>
+    </div>
+    <div class="last_days">
+        <div class="toggler" (click)="toggleList()">
+            <div>
+                <h4>LAST 30 DAYS</h4>
+            </div>
+            <div class="plus">
+                <h1>{{sign}}</h1>
+            </div>
+        </div>
+        <div class="last_list" *ngIf="last_30_days && canShow">
+            <div class="card" *ngFor="let day of last_30_days; let i = index">
+                <div class="card-date">
+                    <div>
+                        <p >{{timeStampToDate(day.timestamp!)}}</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="metrics">
+                    <div class="l-indicators">
+                        <div class="metric">
+                            <p>OPEN:</p>
+                            <span>R$ {{day.low.slice(0,6).replace(".",",")}}</span>
+                        </div>
+                        <div class="metric">
+                            <p>CLOSE:</p>
+                            <span >R$ {{day.low.slice(0,6).replace(".",",")}}</span>
+                        </div>
+                        
+                        <div class="metric" *ngIf = "day.pctChange.slice(0,1) === '-'">
+                            <p>CLOSE DIFF(%):</p>
+                            <span style="color: #E54E4E;" >{{day.pctChange}} % <img src="../../../assets/low.svg"></span>
+                        </div>
+                                                
+                        <div class="metric" *ngIf = "day.pctChange.slice(0,1) != '-'">
+                            <p>CLOSE DIFF(%):</p>
+                            <span style="color: #69C669;">+{{day.pctChange}} % <img src="../../../assets/high.svg" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="r-indicators">
+                        <div class="metric">
+                            <p>HIGH:</p>
+                            <span>R$ {{day.high.slice(0,6).replace(".",",")}}</span>
+                        </div>
+                        <div class="metric">
+                            <p>LOW:</p>
+                            <span>R$ {{day.low.slice(0,6).replace(".",",")}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
